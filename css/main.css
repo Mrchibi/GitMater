@@ -1,0 +1,81 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
+
+.login-wrapper{
+    position:absolute;
+    z-index:999;
+    display:inline-flex;/*根据子元素所有的div大小自适应宽度和高度*/
+    bottom:10%;
+    width:100%;
+    height:18rem;
+    overflow: hidden;
+}
+
+.login-box{
+    position:relative;/*用于后面login-form的定位*/
+    height: 100%;
+    background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    display:inline-flex;
+    bottom:10px;
+    width:100%;
+    overflow:hidden;
+    z-index:999;
+}
+
+
+.login-form{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+}
+
+.login-form .input-row{
+    height:5rem;
+    padding-top:1rem;
+    border-bottom:1px solid #000;
+    opacity: 0.2;
+}
+
+.login-form .input{
+    display: inline-block;
+    width: 22rem;
+    height: 100%;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #FDFCFD;
+}
+
+
+
+.login-form .submit-btn{
+    position: relative;
+    width: 10rem;
+    height: 4rem;
+    margin:1.5rem 0 2.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: #FF3366;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+    transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+
+
+}

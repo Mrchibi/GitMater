@@ -1,0 +1,14 @@
+body {
+    /* Disables pull-to-refresh but allows overscroll glow effects. */
+    width: 100%; height: 100%;
+    min-width: 100%;
+
+}
+
+.logo-img {
+    width:190px;
+}
+
+#queryPerson{
+    border-bottom: 1px solid #fff;
+}

@@ -1,0 +1,83 @@
+<div id="nUserQuery" class="row aside active"><!--观察laycontrol.js要页面显示先要激活,未加active类将不显示-->
+    <i class="aside-overlay"></i>
+    <div class="aside-content blue-grey  col s12 m10 offset-m1 l6 offset-l3">
+        <div class="module module-filter-list">
+            <div class="module-header white-text">
+                <span>人员查询</span>
+                <a id="close" href="#">
+                    <i class="material-icons red-text right">clear</i>
+                </a>
+            </div>
+
+            <div class="module-main scrollable">
+                <div class="row row-full-view">
+                    <!-- 人员查询信息-->
+                    <div id="queryPerson" class="col l12 m12 s12 black-text">
+                        <div class="row">
+                            <form class="col s12 m12 l12">
+                                <!--！！！！！！！！！！！-->
+                                <div id="queryPersons" class="row">
+                                    <div class="row col s12 m4 l4">
+                                        <p class="col s6 m12 l12">
+                                            <input type="checkbox" id="unsafePerson" />
+                                            <label for="unsafePerson" class="black-text">涉稳人员</label>
+                                        </p>
+                                        <p class="col s6 m12 l12">
+                                            <input type="checkbox" id="floatPerson" />
+                                            <label for="floatPerson" class="black-text">流动人口</label>
+                                        </p>
+                                    </div>
+                                    <div class="inputfield row col s12 m4 l4">
+                                        <div class="input-field col s12 m12 l12">
+                                            <input placeholder="身份证号" id="identitycard" type="text" class="validate">
+                                            <label for="identitycard">身份证号</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input placeholder="姓名" id="name" type="text" class="validate">
+                                            <label for="name">姓名</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input placeholder="房屋地址" id="houseAddress" type="text" class="validate">
+                                            <label for="houseAddress">房屋地址</label>
+                                        </div>
+                                    </div>
+                                    <div id="positioncheckbox" class="row col s12 m4 l4">
+                                        <p class="col s12 m12 l12">
+                                            <input type="checkbox" id="houseposition" />
+                                            <label for="houseposition" class="black-text">房屋定位（查询结果中排除无房屋人员）</label>
+                                        </p>
+                                        <span class="col s8 m6 l6">共0条记录</span>
+                                        <a id="query" class="col s4 m6 l6 waves-effect waves-light btn">查询</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-full-view">
+                    <div class="container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th data-field="name">姓名</th>
+                                <th data-field="sex">性别</th>
+                                <th data-field="identitycard">身份证号</th>
+                                <th data-field="more">详细</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>2222</td>
+                                <td>***</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

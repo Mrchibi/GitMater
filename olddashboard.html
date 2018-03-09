@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:padding="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--http-equiv="Content-Type"：http-equiv 属性为名称/值对提供了名称。
+    并指示服务器在发送实际的文档之前先在要传送给浏览器的 MIME 文档头部包含名称/值对-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--X-UA-Compatible是IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页,
+    在IE8刚推出的时候，很多网页由于重构的问题，无法适应较高级的浏览器，所以使用X-UA-Compatible标签强制IE8采用低版本方式渲染。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <!--  width:可视区域的宽度，值可为数字或关键词device-width
+     height:同width
+     intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放-->
+
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="js/materialize.js"></script><!--必须在materialize.js之前引入jQuery-->
+    <script type="text/javascript" src="js/config.js"></script><!--用于materialize相关样式-->
+
+    <title>GIS-地理信息系统</title>
+</head>
+<body>
+<!--导航条-->
+<nav class="nav-extended green darken-1">
+    <!--扩展导航条组件，增加类extended-nav到nav标签中。
+    导航条的高度将会是可变的。然后你可以增加其他标签组件到 nav-wrapper里面。-->
+    <div class="nav-wrapper ">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!--手机折叠按钮-->
+        <ul class="right hide-on-med-and-down">
+            <li><a class="dropdown-button" href="#" data-activates="dropdown1">人员信息<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#" data-activates="dropdown2">房屋信息<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        <!--小屏幕时点击折叠按钮出现侧边栏-->
+        <ul class="side-nav" id="mobile-demo">
+            <li><a class="dropdown-button" href="#" data-activates="dropdown3">人员信息<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#" data-activates="dropdown4">房屋信息<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+    <div class="nav-content">
+        <span class="nav-title">GIS--地理信息系统</span>
+    </div>
+</nav>
+
+
+    <!--下拉菜单项-->
+    <!--下拉菜单项1-->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#">人员编辑</a></li>
+        <li><a href="#">人员查询</a></li>
+        <li><a href="#">高级查询</a></li>
+        <li><a href="#">人员关系</a></li>
+    </ul>
+    <!--下拉菜单项2-->
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="#">房屋录入</a></li>
+        <li><a href="#">楼房录入</a></li>
+        <li><a href="#">房屋查询</a></li>
+        <li><a href="#">房屋显示</a></li>
+    </ul>
+    <ul id="dropdown3" class="dropdown-content">
+        <li><a href="#">人员编辑</a></li>
+        <li><a href="#">人员查询</a></li>
+        <li><a href="#">高级查询</a></li>
+        <li><a href="#">人员关系</a></li>
+    </ul>
+    <!--下拉菜单项2-->
+    <ul id="dropdown4" class="dropdown-content">
+        <li><a href="#">房屋录入</a></li>
+        <li><a href="#">楼房录入</a></li>
+        <li><a href="#">房屋查询</a></li>
+        <li><a href="#">房屋显示</a></li>
+    </ul>
+
+<main style='background-image: url("images/gisbg.jpg")'>
+    <!--侧边栏-->
+    <!--第一级菜单-->
+    <div class="col s12 m3 l3 row fixed">
+            <a class='col s4 m1 l1 button-collapse waves-effect green darken-2 white-text' href='#' data-activates='dropdown5' >基本情况</a>
+            <a class='col s4 m1 l1 button-collapse waves-effect green darken-2 white-text' href='#' >重点情况</a>
+            <a class='col s4 m1 l1 button-collapse waves-effect green darken-2 white-text' href='#'>关注人群</a>
+    </div>
+    <!--第二级菜单-->
+    <ul id="dropdown5" class="side-nav">
+        <li><a class="waves-effect dropdown-button btn white black-text" data-activates='dropdown6' href="#!">
+            <i class="material-icons">cloud</i>基本情况</a></li>
+        <li><a class="waves-effect dropdown-button btn white black-text" data-activates='dropdown6' href="#!">
+            <i class="material-icons">cloud</i>重点情况</a></li>
+        <li><a class="waves-effect dropdown-button btn white black-text" data-activates='dropdown6' href="#!">
+            <i class="material-icons">cloud</i>特殊人群</a></li>
+        <li><a class="waves-effect dropdown-button btn white black-text" data-activates='dropdown6' href="#!">
+            <i class="material-icons">cloud</i>其他情况</a></li>
+    </ul>
+
+    <!--第三级菜单-->
+
+    <form action="#" id='dropdown6' class='dropdown-content valign-wrapper z-depth-2' style="margin-left:15px;">
+        <p class="valign-wrapper" style="padding-left:74px;">
+            <i class="material-icons" style="padding-right:14px;">cloud</i>
+            <input type="checkbox" id="check1" class="valign" /><label for="check1" class="valign black-text">乡政府</label></p>
+        <p class="valign-wrapper" style="padding-left:74px;">
+            <i class="material-icons" style="padding-right:14px;">stars</i>
+            <input type="checkbox" id="check2" class="valign" /><label for="check2" class="valign black-text">村委</label></p>
+        <p class="valign-wrapper" style="padding-left:74px;">
+            <i class="material-icons" style="padding-right:14px;">shop</i>
+            <input type="checkbox" id="check3" class="valign" /><label for="check3" class="valign black-text">中学</label></p>
+    </form>
+    <!--工具按钮-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green darken-4">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+
+
+
+</main>
+
+<footer class="page-footer green darken-1" style="margin:0;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">GIS--地理信息系统</h5>
+                <p class="grey-text text-lighten-4">本版权声明的最终解释权归本网站所有</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">链接</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">链接 1</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright 文本
+            <a class="grey-text text-lighten-4 right" href="#!">更多链接</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

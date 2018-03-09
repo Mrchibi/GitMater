@@ -1,0 +1,105 @@
+.aside,
+.aside-overlay {
+    position: fixed;/*生成绝对定位的元素，相对于浏览器窗口进行定位。*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.aside {
+    -webkit-transition: visibility .25s;
+    transition: visibility .25s;
+    z-index: 3;
+    visibility: hidden;
+    overflow: hidden;
+    margin-bottom: 0;
+    z-index:999;
+}
+.aside .module-header{
+    display: block;
+    /* line-height: 44px; */
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 20px;
+    border-bottom:1px solid #fff;
+}
+.aside.active {
+    -webkit-transition: none;
+    transition: none;
+    visibility: visible;
+}
+
+.aside-overlay {
+    background-color: black;
+    opacity: 0;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+}
+
+.active > .aside-overlay {
+    opacity: .6;
+}
+
+.aside .module-footer {
+    bottom: 10px;
+    position: absolute;
+    background-color: inherit;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 10px;
+    width: 100%;
+}
+
+.aside .module-main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 44px;
+    bottom: 92px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.aside .scrollable {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+@media only screen and (max-width: 601px) {
+    .aside-content {
+
+        bottom: 0 !important;
+        top: 0 !important;
+    }
+}
+
+
+.aside-content {
+    position: absolute;
+
+    -webkit-transition: transform .15s;
+    transition: transform .15s;
+    left: 0;
+    top: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    bottom: 50px;
+    top: 65px;
+    margin-bottom: 0;
+
+
+}
+.active > .aside-content {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+}
+
+
+
+.noscroll,
+.noscroll body {
+    overflow: hidden;
+}
+
+.noscroll body {
+    position: absolute;
+}
