@@ -1,0 +1,22 @@
+p.row,input,select{
+    margin:0;
+}
+
+div.row.col.s12{
+    padding:0;
+    margin:0;
+}
+
+div.row.col.s12 p.row{
+    margin-top:9px;
+}
+
+div.row.col.s12>input{
+    padding-left:3px;
+    width:106px;
+    margin:0;
+}
+div.row.col p.left>input{
+    width:106px;
+    margin:0;
+}

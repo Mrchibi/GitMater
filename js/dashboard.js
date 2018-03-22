@@ -66,6 +66,17 @@
                         /* function(response,status,xhr)是load() 方法完成后所执行的函数名称。*/
                     }
                     break;
+                case "高级查询":
+                    if ($("#nAdvanceQuery").length>0){
+                        showNewAdvanceQuery();
+                    }
+                    else{
+                        $("#infoAdvance").load("advancequery/advancequery.html",function(response,status,xhr){
+                            initNewAdvanceQuery();/*初始化advancequery页面*/
+                        });
+                        /* function(response,status,xhr)是load() 方法完成后所执行的函数名称。*/
+                    }
+                    break;
 
             }
             return true;

@@ -12,3 +12,14 @@ body {
 #queryPerson{
     border-bottom: 1px solid #fff;
 }
+
+/*覆盖原来的样式*/
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: rgb(238, 110, 115);
+    color: #fff;
+}
+.tabs .tab.disabled a, .tabs .tab.disabled a:hover {
+    color: #aaa;
+    cursor: default;
+    background: #eee;
+}

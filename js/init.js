@@ -5,6 +5,7 @@ $( document ).ready(function(){
     $(".button-collapse").sideNav();/*折叠按钮*/
     $('.slider').slider({full_width: true});/*全屏轮播*/
     $(".dropdown-button").dropdown();/*下拉菜单*/
+    $('select').material_select();
    /* $('select').material_select();/*对于动态生成的下拉列表你必须单独调用初始化。*/
 });
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>序列化表单为一个数组对象（获取表单元素的name和value属性）生成json数据，</title>
+</head>
+<body>
+
+<form>
+    <input id="a1" type="text" value="" name="a1"><br>
+    <input id="a2" type="text" value="" name="a2"><br>
+    <input id="a3" type="text" value="" name="a3"><br>
+    <input id="a4" type="text" value="" name="a4"><br>
+    <select id="ax" name="ax">
+        <option value="0">选项1</option>
+        <option value="1">选项2</option>
+    </select><br>
+    <input id="submit" type="button" value="提交" name="submit">
+</form>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+
+<!--serializeArray() 方法通过序列化表单值来创建对象（name 和 value）的数组。
+JSON.stringify() 方法用于将 JavaScript 值转换为 JSON 字符串。
+-->
+<script type="text/javascript">
+    $(function() {
+        $('#submit').click(function() {
+            var jsonInfo = {};
+            var $formArray = $('form').serializeArray();
+            $.each($formArray, function() {
+                jsonInfo[this.name] = this.value;
+            });
+            alert(JSON.stringify(jsonInfo));
+        });
+    });
+</script>
+</body>
+</html>

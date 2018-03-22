@@ -11,10 +11,10 @@
     -webkit-transition: visibility .25s;
     transition: visibility .25s;
     z-index: 3;
-    visibility: hidden;
+    visibility: hidden;/*使元素不可见*/
     overflow: hidden;
     margin-bottom: 0;
-    z-index:999;
+    z-index:4;
 }
 .aside .module-header{
     display: block;
@@ -26,7 +26,7 @@
 }
 .aside.active {
     -webkit-transition: none;
-    transition: none;
+    transition: none;/*none	没有属性会获得过渡效果。*/
     visibility: visible;
 }
 
@@ -48,6 +48,29 @@
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 10px;
     width: 100%;
+    height:80px;
+}
+
+/*交集选择器层叠掉上面的样式*/
+.aside .module-footer.row {
+    bottom: 10px;
+    position: absolute;
+    background-color: inherit;
+    border:0px;
+    left:-8px;
+    width: 100%;
+}
+
+/*手机屏幕底部样式*/
+@media screen and (max-width: 480px){
+    .aside .module-footer.row {
+        position: absolute;
+        bottom: 0px;
+        left:0px;
+        width: 100%;
+        background-color: inherit;
+        border:0px;
+    }
 }
 
 .aside .module-main {
@@ -56,8 +79,9 @@
     right: 0;
     top: 44px;
     bottom: 92px;
-    overflow: auto;
+    overflow: auto;/*如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。*/
     -webkit-overflow-scrolling: touch;
+    /* 网页在Safari快速滚动和回弹*/
 }
 
 .aside .scrollable {

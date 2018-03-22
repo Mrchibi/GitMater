@@ -1,83 +1,110 @@
-<div id="nUserQuery" class="row aside"><!--观察laycontrol.js要页面显示先要激活,未加active类将不显示-->
-    <i class="aside-overlay"></i>
+<div id="nUserQuery" class="row aside">
+    <!--观察laycontrol.js要页面显示先要激活,未加active类将不显示-->
+    <i class="aside-overlay hideAside"></i>
     <div class="aside-content blue-grey  col s12 m10 offset-m1 l6 offset-l3">
         <div class="module module-filter-list">
             <div class="module-header white-text">
-                <span>人员查询</span>
                 <a id="close" href="#">
-                    <i class="material-icons red-text right">clear</i>
+                    <i class="material-icons right red-text">clear</i>
                 </a>
+                <span class="modal-title">人员查询</span>
             </div>
 
             <div class="module-main scrollable">
-                <div class="row row-full-view">
+                <div class="row">
+                    <!--<div class="row row-full-view">-->
                     <!-- 人员查询信息-->
-                    <div id="queryPerson" class="col l12 m12 s12 black-text">
+                    <div id="queryPerson" class="col l12 m12 s12 white-text">
                         <div class="row">
+                            <div class="photo-size l12 m12 s12">
+                                <div class="file-field input-field">
+                                    <span class="header center orange-text flow-text">
+                                        查询参数
+                                    </span><br />
+                                </div>
+                            </div>
                             <form class="col s12 m12 l12">
-                                <!--！！！！！！！！！！！-->
+
                                 <div id="queryPersons" class="row">
-                                    <div id="queryCheckbox" class="row col s12 m4 l4">
-                                        <!--<p class="col s6 m12 l12">
-                                            <input type="checkbox" id="unsafePerson" />
-                                            <label for="unsafePerson" class="black-text">涉稳人员</label>
+
+                                    <div id="queryInputfield" class="row col s12 m6 l6">
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="query_identitycard" name="query_identitycard" value="" type="text" data-length="18" class="validate">
+                                            <label for="query_identitycard">身份证号</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="query_name" name="query_name" value="" type="text" class="validate">
+                                            <label for="query_name">姓名</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="query_houseAddress" name="query_houseAddress" value="" type="text" class="validate">
+                                            <label for="query_houseAddress">房屋地址</label>
+                                        </div>
+                                    </div>
+                                    <div class="row col s12 m6 l6">
+                                        <p class="col s6 m6 l6">
+                                            <input type="checkbox" id="ckbUnsafePerson" name="ckbUnsafePerson" value="true" />
+                                            <label for="ckbUnsafePerson" class="white-text">涉稳人员</label>
                                         </p>
-                                        <p class="col s6 m12 l12">
-                                            <input type="checkbox" id="floatPerson" />
-                                            <label for="floatPerson" class="black-text">流动人口</label>
-                                        </p>-->
+                                        <p class="col s6 m6 l6">
+                                            <input type="checkbox" id="ckbfloatPerson" name="ckbfloatPerson" value="true" />
+                                            <label for="ckbfloatPerson" class="white-text">流动人口</label>
+                                        </p>
+
                                     </div>
-                                    <div id="queryInputfield" class="row col s12 m4 l4">
-                                        <!--<div class="input-field col s12 m12 l12">
-                                            <input placeholder="身份证号" id="identitycard" type="text" class="validate">
-                                            <label for="identitycard">身份证号</label>
-                                        </div>
-                                        <div class="input-field col s12 m12 l12">
-                                            <input placeholder="姓名" id="name" type="text" class="validate">
-                                            <label for="name">姓名</label>
-                                        </div>
-                                        <div class="input-field col s12 m12 l12">
-                                            <input placeholder="房屋地址" id="houseAddress" type="text" class="validate">
-                                            <label for="houseAddress">房屋地址</label>
-                                        </div>-->
-                                    </div>
-                                    <div id="positioncheckbox" class="right row col s12 m4 l4">
-                                        <!--<p class="col s12 m12 l12">
-                                            <input type="checkbox" id="houseposition" />
-                                            <label for="houseposition" class="black-text">房屋定位（查询结果中排除无房屋人员）</label>
+                                    <div class="right row col s12 m6 l6">
+                                        <p class="col s12 m12 l12">
+                                            <input type="checkbox" id="ckbhouseposition" name="ckbhouseposition" value="true" />
+                                            <label for="ckbhouseposition" class="white-text">房屋定位</label>
+                                            <span class="Subsidiary-info">（查询结果中排除无房屋人员）</span>
                                         </p>
                                         <span class="col s8 m6 l6">共0条记录</span>
-                                        <a id="query" class="col s4 m6 l6 waves-effect waves-light btn">查询</a>-->
+                                        <button id="userquery1"  class="col s4 m6 l6 waves-effect waves-light btn">查询</button>
                                     </div>
                                 </div>
                             </form>
+                            <button id="userquery"  class="col s4 m6 l6 waves-effect waves-light btn">查询</button>
+                            <div class="l12 m12 s12">
+                                <span class="header center orange-text flow-text">
+                                    查询结果
+                                </span><br />
+                            </div>
+
+                            <div class="col s12 m12 l12">
+                                <table id="queryPersonTb" class="centered center-align responsive-table bordered">
+                                    <thead>
+                                    <tr id="queryPersonThr">
+                                        <td>姓名</td>
+                                        <td>性别</td>
+                                        <td>身份证号</td>
+                                        <td>详情</td>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody id="queryPersonTd"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row row-full-view">
-                    <div class="container">
-                        <table>
-                            <thead>
-                            <tr id="queryPersonTh">
-                                <!--<th data-field="name">姓名</th>
-                                <th data-field="sex">性别</th>
-                                <th data-field="identitycard">身份证号</th>
-                                <th data-field="more">详细</th>-->
-                            </tr>
-                            </thead>
 
-                            <tbody id="queryPersonTd">
-                            <tr>
-                                <!--<td>张三</td>
-                                <td>男</td>
-                                <td>2222</td>
-                                <td>***</td>-->
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!--<script type="text/javascript">
+    $(function() {
+        $('#query').click(function() {
+            var personInfo = {};
+            var $formArray = $('form').serializeArray();
+            $.each($formArray, function() {
+                personInfo[this.name] = this.value;
+            });
+            alert(JSON.stringify(personInfo));
+            console.log(personInfo);
+        });
+    });
+</script>-->

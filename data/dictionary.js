@@ -436,7 +436,7 @@ var   registrationInfo= {/*户籍相关信息*/
     reasontype: { label: '应销未销原因', values: reasontype },
     notsetreason: { label: '未落户原因', values: notsetreason },
     birthadd:{label:'出生地'},
-    nativeplace: { label: '籍贯' }
+    origin: { label: '籍贯' }
 };
 var unsafeInfo = {
     unsafeperson: {/*涉稳人员信息*/
